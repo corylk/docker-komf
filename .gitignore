@@ -43,3 +43,4 @@ Temporary Items
 .apdisk
 docker-compose.yml
 .jenkins-external
+/config

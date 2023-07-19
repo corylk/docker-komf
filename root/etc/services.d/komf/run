@@ -8,7 +8,7 @@ fdmove -c 2 1
 
 # Drop privileges and set env
 s6-setuidgid abc
-s6-env DISPLAY=:1 HOME=/config
+s6-env HOME=/config
 
 # Execute komf
 cd /app
