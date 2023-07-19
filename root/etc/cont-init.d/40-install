@@ -1,0 +1,12 @@
+#!/usr/bin/with-contenv bash
+
+
+[ "$REPO_GIT" = "" ] && REPO_GIT="https://github.com/Snd-R/komf"
+[ "$KOMF_VERSION" = "" ] && KOMF_VERSION="master"
+
+  echo '------------------------'
+  echo '| Downloading komf       |'
+  echo '------------------------'
+
+cd /app
+curl -s https://api.github.com/repos/Snd-R/komf/releases/latest | grep browser_download_url | cut -d '"' -f 4
