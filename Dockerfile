@@ -22,6 +22,3 @@ ENV PATH $PATH:/usr/lib/jvm/java-17-openjdk/jre/bin:/usr/lib/jvm/java-17-openjdk
 RUN set -x && apk add --no-cache openjdk17 && [ "$JAVA_HOME" = "$(docker-java-home)" ]
 
 EXPOSE 8085
-
-# debug only
-COPY config/ /config 
