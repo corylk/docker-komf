@@ -1,4 +1,4 @@
-#!/bin/execlineb -P
+#!/command/execlineb -P
 
 # Load env variables
 with-contenv
@@ -6,14 +6,11 @@ with-contenv
 # Redirect stderr to stdout.
 fdmove -c 2 1
 
-#set umask
-importas UMASK_SET UMASK_SET
-umask ${UMASK_SET}
-
 # Drop privileges and set env
 s6-setuidgid abc
 s6-env DISPLAY=:1 HOME=/config
 
 # Execute komf
-/usr/local/bin/kcc
+cd /app
+java -jar komf-1.0-SNAPSHOT-all.jar
 
